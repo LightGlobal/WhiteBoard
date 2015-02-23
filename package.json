@@ -1,0 +1,24 @@
+{
+  "name": "whiteboard",
+  "version": "1.0.0",
+  "description": "WhiteBoard\r ==========",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LightGlobal/WhiteBoard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LightGlobal/WhiteBoard/issues"
+  },
+  "homepage": "https://github.com/LightGlobal/WhiteBoard",
+  "devDependencies": {
+    "cookie-parser": "^1.3.4",
+    "express": "^4.11.2",
+    "express-session": "^1.10.3"
+  }
+}
