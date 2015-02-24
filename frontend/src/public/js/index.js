@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if(res.data.code=='001'){
                         alert('该课室名已被创建');
                     }else{
-                        url = 'http://'+window.location.host+'/room/'+res.data.md5Sid;
+                        url = 'http://'+window.location.host+'/whiteboard/room'+res.data.md5Name;
                         showLinkEle.innerHTML = '转到创建的课室，并把该链接分享给朋友<a href="'+url+'">'+url+'</a>';
                     }
                 }

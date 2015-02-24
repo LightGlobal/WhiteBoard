@@ -1,6 +1,7 @@
-function Room(name, md5Sid){
+function Room(name, md5Name, sid){
     this.name = name;
-    this.md5Sid = md5Sid;
+    this.md5Name = md5Name;
+    this.sid = sid;
 }
 
 module.exports = Room;

@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        #board{
+            border: 2px solid #000;
+            width:400px;
+            position: absolute;
+            left: 50%;
+            margin-left: -200px;
+        }
+    </style>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      var socket = io();
+        var isOwner = <%=isOwner%>;
+        var socket = io(),
+            pathname = location.pathname,
+            roomName = pathname.substring(pathname.lastIndexOf('/')+1, pathname.length);
+        socket.emit('join', roomName);
+
     </script>
-    
-    <canvas width='400' height='400' id='board'></canvas>
+     
 </head>
 <body>
+    <canvas width='400' height='400' id='board'></canvas>
 <script type="text/javascript" src='public/js/draw.js'></script>
 <script type="text/javascript" src='public/js/room.js'></script>    
 </body>

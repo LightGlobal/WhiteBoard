@@ -15,10 +15,12 @@ var Drawboard = (function(win) {
         }
     }
     function draw(x, y, options) {
-        ctx.beginPath();
+        if(options && options.begin){
+            ctx.beginPath();
+        }
         setting(options);
 
-        ctx.moveTo(x-((options&&options.lineWidth)||1), y-((options&&options.lineWidth)||1));
+        //ctx.moveTo(x-((options&&options.lineWidth)||1), y-((options&&options.lineWidth)||1));
         ctx.lineTo(x, y);
         ctx.stroke();
     }
