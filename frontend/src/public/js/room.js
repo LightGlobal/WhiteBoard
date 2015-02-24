@@ -26,7 +26,6 @@ doc.addEventListener('DOMContentLoaded', function(e) {
             begin = false;
         });
         socket.on('getImg', function(msg){
-            alert(2)
             var dataUrl = board.toDataURL();
             socket.emit('initBoard', dataUrl);
         });
@@ -36,10 +35,9 @@ doc.addEventListener('DOMContentLoaded', function(e) {
             Drawboard.draw(point.x, point.y, {begin: point.begin});
         });
         socket.on('initBoard', function(dataUrl){
-            alert(1)
             var img = new Image();
             img.onload = function(){
-                board.drawImage(img);
+                board.getContext('2d').drawImage(img, 0, 0);
             }
             img.src = dataUrl;
         });

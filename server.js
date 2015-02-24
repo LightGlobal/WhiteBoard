@@ -106,7 +106,7 @@ io.on('connection', function(socket) {
         if(room){
             console.log('a user join '+room.name);
             socket.join(room.name);
-            socket.emit('getImg');
+            socket.broadcast.to(room.name).emit('getImg');
         }else{  //课室未创建
             console.log('no room md5Name '+md5Name);
         }
@@ -117,7 +117,7 @@ io.on('connection', function(socket) {
     });
 
     socket.on('initBoard', function(dataUrl){
-        socket.emit('initBoard', dataUrl);
+        socket.broadcast.to(room.name).emit('initBoard', dataUrl);
     });
 
 });
