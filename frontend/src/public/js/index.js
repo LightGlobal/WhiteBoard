@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.log(xhr.responseText);
                     res = JSON.parse(xhr.responseText);
                     if(res.data.code=='001'){
-                        alert('该课室名已被创建');
+                        alert('该课室已被创建，请使用不同的教室名');
                     }else{
                         url = 'http://'+window.location.host+'/whiteboard/room'+res.data.md5Name;
                         showLinkEle.innerHTML = '转到创建的课室，并把该链接分享给朋友<a href="'+url+'">'+url+'</a>';
